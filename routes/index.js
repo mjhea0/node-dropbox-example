@@ -32,8 +32,9 @@ router.get('/', function(req,res){
       res.send("Hello, " + accountInfo.name + "!");
     });
 
+  } else {
+    res.send("Go register an app with Dropbox!");
   }
-  res.send("Go register an app with Dropbox!");
 
 });
 
