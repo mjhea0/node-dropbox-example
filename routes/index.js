@@ -27,10 +27,18 @@ router.get('/', function(req,res){
     // get account info
     dropboxClient.getAccountInfo(function(error, accountInfo) {
       if (error) {
-        return showError(error);  // Something went wrong.
+        return showError(error);
       }
       res.send("Hello, " + accountInfo.name + "!");
     });
+
+    // show dropbox files
+    // dropboxClient.readdir("/", function(error, entries) {
+    //   if (error) {
+    //     return showError(error);
+    //   }
+    //   res.send("Your Dropbox contains " + entries.join(", "));
+    // });
 
   } else {
     res.send("Go register an app with Dropbox!");
